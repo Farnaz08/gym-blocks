@@ -13,7 +13,7 @@ class BlocksEnv(gym.Env):
   def step(self, action, blocks):
      '''
      Gives us 10 total movement options. (0,1,2,3,4,5,6,7,8,9)
-        '''
+     '''
      if action == 0:
        state= blocks[0] 
      elif action == 1:
@@ -40,12 +40,12 @@ class BlocksEnv(gym.Env):
        #print("negative reward=",reward) 
        #count=count+1 
              
-      elif(action%2==1):
-        reward = 100
-        #print("positive reward=",reward)
-        #count=count+1
+     elif(action%2==1):
+       reward = 100
+       #print("positive reward=",reward)
+       #count=count+1
          
-      if(reward==100):
+     if(reward==100):
         done = True
         info = {}
         return state, reward, done, info
