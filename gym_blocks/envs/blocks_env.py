@@ -53,7 +53,7 @@ class BlocksEnv(gym.Env):
   def reset(self,blocks):
     
     state=random.choice(blocks)
-        return state
+    return state
     
   def render(self, mode='human'):
     pass
