@@ -1,7 +1,9 @@
 import gym
 from gym import error, spaces, utils
 from gym.utils import seeding
+import random
 
+done=False
 class BlocksEnv(gym.Env):
   metadata = {'render.modes': ['human']}
 
@@ -35,20 +37,21 @@ class BlocksEnv(gym.Env):
      elif action == 9:
        state= blocks[9]
           
-     if(action%2==0):
+     if(state%2==0):
        reward = 0
        #print("negative reward=",reward) 
        #count=count+1 
              
-     elif(action%2==1):
+     elif(state%2==1):
        reward = 100
        #print("positive reward=",reward)
        #count=count+1
          
-     if(reward==100):
-        done = True
-        info = {}
-        return state, reward, done, info
+     #if(reward==100):
+     done = True
+     info = {}
+        
+     return state, reward, done, info
       
   def reset(self,blocks):
     
