@@ -9,13 +9,14 @@ class BlocksEnv(gym.Env):
 
   def __init__(self):
 
-    self.action_space = gym.spaces.Discrete(10)
-    self.observation_space = gym.spaces.Discrete(10)
+    self.action_space = gym.spaces.Discrete(5)
+    self.observation_space = gym.spaces.Discrete(5)
       
   def step(self, action, blocks):
      '''
      Gives us 10 total movement options. (0,1,2,3,4,5,6,7,8,9)
      '''
+     
      if action == 0:
        state= blocks[0] 
      elif action == 1:
@@ -26,6 +27,7 @@ class BlocksEnv(gym.Env):
        state= blocks[3]
      elif action == 4:
        state= blocks[4]
+      '''
      elif action == 5:
        state= blocks[5]
      elif action == 6:
@@ -35,7 +37,7 @@ class BlocksEnv(gym.Env):
      elif action == 8:
        state= blocks[8]
      elif action == 9:
-       state= blocks[9]
+       state= blocks[9]'''
           
      if(state%2==0):
        reward = 0
